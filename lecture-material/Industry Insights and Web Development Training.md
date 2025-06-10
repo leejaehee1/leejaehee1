@@ -744,7 +744,7 @@ IT 직무는 기술 발전, 산업 구조 변화, 사용자 요구 증가에 따
 
 ### 스타트업 IT 직무
 
-![스크린샷2](/public/images/2025-06-10_12.29.15.png)
+![스크린샷2](https://gitlab.com/username/repository/raw/main/public/images/2025-06-10_12.29.15.png)
 
 ---
 

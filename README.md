@@ -1,4 +1,7 @@
 ## Hi there 👋
+### My name is john.
+
+> Today's weather is warm.
 
 <!--
 **leejaehee1/leejaehee1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

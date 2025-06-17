@@ -40,10 +40,35 @@
         transform: rotateY(45deg);
         transform: rotateZ(45deg);
       }
+
+      /* 그라디언트 */
+      .gradient {
+        background: linear-gradient(to right, red, yellow);
+      }
+
+      /* 미디어 쿼리 */
+      @media (mim-width: 300px) {
+        .box {
+          background-color: yellow;
+        }
+      }
+
+      @media (min-width: 600px) {
+        .box {
+          background-color: blue;
+        }
+      }
+
+      @media (min-width: 1000px) {
+        .box {
+          background-color: red;
+        }
+      }
     </style>
   </head>
   <body>
     <h1>CSS3 and CSS Module</h1>
-    <div class="css3 box">CSS3</div>
+    <div class="css3 box gradient">CSS3</div>
+    <div class="box">Box</div>
   </body>
 </html>

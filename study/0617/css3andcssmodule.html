@@ -46,27 +46,32 @@
         background: linear-gradient(to right, red, yellow);
       }
 
-      /* 미디어 쿼리 */
-      @media (mim-width: 300px) {
+      /* 데스크탑 */
+      @media (min-width: 1025px) {
         .box {
+          font-size: 20px;
           background-color: yellow;
         }
       }
 
-      @media (min-width: 600px) {
+      /* 태블릿 */
+      @media (min-width: 768px) and (max-width: 1024px) {
         .box {
+          font-size: 18px;
           background-color: blue;
         }
       }
 
-      @media (min-width: 1000px) {
+      /* 모바일 */
+      @media (max-width: 767px) {
         .box {
+          font-size: 16px;
           background-color: red;
         }
       }
     </style>
   </head>
-  <body>
+  <body class="box">
     <h1>CSS3 and CSS Module</h1>
     <div class="css3 box gradient">CSS3</div>
     <div class="box">Box</div>

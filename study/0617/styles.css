@@ -1,0 +1,13 @@
+body {
+  background-color: yellow;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+  color: blue;
+}
+
+h2 {
+  color: lightcoral;
+  font-weight: 300;
+}

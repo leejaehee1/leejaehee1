@@ -12,13 +12,22 @@
       }
 
       .tab-container {
+        max-width: 500px;
+        margin: auto;
       }
 
       input[type="radio"] {
+        display: none;
       }
 
       label {
         display: inline-block;
+        padding: 12px 20px;
+        background-color: #ddd;
+        margin-right: 5px;
+        cursor: pointer;
+        border-radius: 8px 8px 0 0;
+        transition: background 0.3s;
       }
 
       input[type="radio"]:checked + label {
@@ -27,6 +36,12 @@
       }
 
       .content {
+        display: none;
+        background-color: white;
+        padding: 20px;
+        border-radius: 0 8px 8px 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: -5px;
       }
 
       /* 각각의 탭이 체크됐을 때 해당 content 보여주기 */

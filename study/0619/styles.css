@@ -13,10 +13,15 @@ header {
 }
 
 .content {
+  display: block;
+  padding: 20px;
 }
 
 .left-column,
 .right-column {
+  background-color: #f4f4f4;
+  margin: 10px 0;
+  padding: 15px;
 }
 
 footer {
@@ -29,15 +34,21 @@ footer {
 /* 미디어 쿼리 - 768px 이상 */
 @media screen and (min-width: 768px) {
   .content {
+    display: flex;
+    justify-content: space-between;
   }
 
   .left-column,
   .right-column {
+    /* flex: 1; */
+    width: 48%;
   }
 }
 
 /* 미디어 쿼리 - 1024px 이상 */
 @media screen and (min-width: 1024px) {
   .content {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }

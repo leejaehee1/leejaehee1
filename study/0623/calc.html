@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>점수 계산기</title>
+    <style></style>
+  </head>
+  <body>
+    <h2>과목 점수 입력</h2>
+    <label>국어: <input type="number" id="korean" /></label><br />
+    <label>수학: <input type="number" id="math" /></label><br />
+    <label>영어: <input type="number" id="english" /></label><br />
+    <label>과학: <input type="number" id="science" /></label><br />
+
+    <button onclick="calculate()">계산하기</button>
+
+    <h3>결과</h3>
+    <p id="total"></p>
+    <p id="average"></p>
+    <p id="grade"></p>
+
+    <script>
+      function calculate() {
+        const korean = parseFloat(document.getElementById("korean").value) || 0;
+        const math = parseFloat(document.getElementById("math").value) || 0;
+        const english =
+          parseFloat(document.getElementById("english").value) || 0;
+        const science =
+          parseFloat(document.getElementById("science").value) || 0;
+
+        const total = korean + math + english + science;
+        const average = total / 4;
+
+        let grade = "";
+        if (average >= 90) grade = "A";
+        else if (average >= 80) grade = "B";
+        else if (average >= 70) grade = "C";
+        else if (average >= 60) grade = "D";
+        else grade = "F";
+
+        document.getElementById("total").textContent = `총점: ${total}`;
+        document.getElementById(
+          "average"
+        ).textContent = `평균: ${average.toFixed(2)}`;
+        document.getElementById("grade").textContent = `등급: ${grade}`;
+      }
+    </script>
+  </body>
+</html>

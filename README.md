@@ -17,6 +17,27 @@
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
 
+### github 스탯
+
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=leejaehee1&show_icons=true&theme=radical)
 
+### 많이 사용한 언어
+
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=leejaehee1&layout=compact&theme=radical)
+
+### 연속 커밋
+
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=leejaehee1&theme=radical)
+
+### 방문자 카운트
+
+![Visitor Count](https://profile-counter.glitch.me/leejaehee1/count.svg)
+
+| 기술       | 수준       | 경험 |
+| ---------- | ---------- | ---- |
+| JavaScript | ⭐⭐⭐⭐⭐ | 3년  |
+| React      | ⭐⭐⭐⭐   | 2년  |
+| JavaScript | ⭐⭐⭐⭐⭐ | 3년  |
+| React      | ⭐⭐⭐⭐   | 2년  |
+| JavaScript | ⭐⭐⭐⭐⭐ | 3년  |
+| React      | ⭐⭐⭐⭐   | 2년  |

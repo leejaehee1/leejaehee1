@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수 예제</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 함수 예제
+      //   function greet() {
+      //     alert("반갑습니다!");
+      //   }
+
+      //   greet();
+
+      //   function showName() {
+      //     let name = "홍길동";
+      //     name = "이순신";
+      //     console.log(name);
+      //   }
+
+      //   showName();
+
+      //   console.log("outer" + name);
+
+      //   function add(a, b) {
+      //     return a + b;
+      //   }
+
+      //   let sum = add(3, 5);
+
+      // 실습 예시: BMI 계산기
+      // 몸무게 / (키 * 키)
+
+      function calcBMI(w, h1, h2) {
+        return w / (h1 * h2);
+      }
+
+      let bmi = calcBMI(75, 1.75, 1.75);
+      console.log(bmi);
+
+      function calcBMI2(w, h) {
+        return w / (h * h);
+      }
+
+      let bmi2 = calcBMI2(75, 1.75);
+      console.log(bmi2);
+    </script>
+  </body>
+</html>

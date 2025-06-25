@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>filter 예제</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const evenNumbers = numbers.filter((number) => number % 2 === 0);
+      console.log(evenNumbers);
+
+      const users = [
+        { name: "Alice", age: 20 },
+        { name: "Bob", age: 19 },
+        { name: "Charlie", age: 30 },
+      ];
+      const adults = users.filter((user) => user.age >= 20);
+      console.log(adults);
+    </script>
+  </body>
+</html>

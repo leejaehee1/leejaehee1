@@ -106,11 +106,62 @@
       //   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
       //   alert(`${days}일 째 되는 날입니다.`);
+      //   const now = new Date();
+      //   console.log(now);
+      //   console.log(now.getFullYear());
+      //   console.log(now.getMonth() + 1);
+      //   console.log(now.getDate());
+
+      //   const thatDay = new Date("2025-12-25");
+
+      //   console.log(thatDay.getFullYear());
+      //   console.log(thatDay.getMonth() + 1);
+      //   console.log(thatDay.getDate());
+
+      //   const now = new Date();
+      //   console.log(now.getFullYear());
+      //   console.log(now.getMonth() + 1);
+      //   console.log(now.getDate());
+
+      //   now.setDate(now.getDate() + 100);
+
+      //   const thatDay = new Date("2025-12-25");
+      //   const diff = now.getTime() - thatDay.getTime();
+      //   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      //   alert(`${days}일 째 되는 날입니다.`);
+
+      //   console.log(now.getDay());
+      //   thatDay.setDay(0);
+      //   console.log(thatDay.getDay());
+
+      // 본인의 정보를 담은 객체를 만들어 이름, 나이, 자기소개() 메서드를 출력해보세요
+      const user = {
+        name: "이재희",
+        age: 100,
+        introduce: function () {
+          alert(`안녕하세요! 저는 ${this.name}이고, ${this.age}살 입니다.`);
+        },
+      };
+      // 생성자 함수를 이용해 Book 객체 여러 개 만들어보기
+      function Book(title, author, year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+      }
+
+      const book1 = new Book("책1", "저자1", 2025);
+      const book2 = new Book("책2", "저자2", 2024);
+      const book3 = new Book("책3", "저자3", 2023);
+
+      // Date 객체를 활용해 오늘 날짜와 특정 날짜 간의 차이 계산하기
       const now = new Date();
-      console.log(now);
-      console.log(now.getFullYear());
-      console.log(now.getMonth() + 1);
-      console.log(now.getDate());
+      const thatDay = new Date("2024-11-11");
+
+      const diff = now.getTime() - thatDay.getTime();
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      console.log(`${days}일 째 되는 날입니다.`);
     </script>
   </body>
 </html>

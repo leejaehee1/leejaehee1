@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스택, 큐 예제</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      //   const stack = [];
+      //   stack.push(1); // [1]
+      //   stack.push(2); // [1, 2]
+      //   stack.push(3); // [1, 2, 3]
+
+      //   console.log(stack);
+      //   console.log(stack.pop());
+
+      //   console.log(stack[stack.length - 1]); // (peek) 마지막 요소 출력
+
+      const queue = [];
+      queue.push("A"); // [A]
+      queue.push("B"); // [A, B]
+      queue.push("C"); // [A, B, C]
+
+      console.log(queue);
+      console.log(queue.shift()); // [B, C]
+      console.log(queue);
+      console.log(queue[0]); // (peek) 첫 번째 요소 출력
+    </script>
+  </body>
+</html>

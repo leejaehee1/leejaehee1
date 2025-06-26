@@ -24,6 +24,8 @@
     <button id="change-box">박스 변경</button>
     <div id="element-add">요소 추가 div</div>
     <button id="element-add-button">요소 추가 버튼</button>
+    <button id="move-element">요소 이동 버튼</button>
+    <button id="remove-element">요소 삭제 버튼</button>
     <script>
       let text = document.getElementById("greeting");
       text.innerText = "Hello World!";
@@ -56,11 +58,12 @@
       // *toggle 버튼 연습 필요(자습)
 
       // createElement 실습
+      let i = 0;
       let elementAddButton = document.getElementById("element-add-button");
       elementAddButton.addEventListener("click", function () {
         let elementAdd = document.getElementById("element-add");
         let elementAddDiv = document.createElement("div");
-        elementAddDiv.innerText = "추가";
+        elementAddDiv.innerText = "추가" + i;
         elementAddDiv.style.backgroundColor = "blue";
         elementAddDiv.style.color = "red";
         elementAddDiv.style.padding = "10px 20px";
@@ -68,6 +71,25 @@
         elementAddDiv.style.cursor = "pointer";
         elementAddDiv.style.boxShadow = "0 0 10px 0 rgba(0, 0, 0, 0.5)";
         elementAdd.appendChild(elementAddDiv);
+        i++;
+      });
+
+      let moveElementButton = document.getElementById("move-element");
+      moveElementButton.addEventListener("click", function () {
+        let box = document.getElementById("box");
+        let body = document.getElementsByTagName("body");
+        // body[0].appendChild(box);
+        body[0].insertBefore(box, body[0].firstChild);
+      });
+
+      let removeElementButton = document.getElementById("remove-element");
+      removeElementButton.addEventListener("click", function () {
+        let title = document.getElementById("greeting");
+        // title.remove();
+        let elementAddDiv = document.getElementById("element-add");
+        elementAddDiv.firstChild.parentElement.removeChild(
+          elementAddDiv.lastChild
+        );
       });
     </script>
   </body>

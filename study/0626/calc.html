@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div id="display" class="display">0</div>
+      <div id="buttons" class="buttons">
+        <button id="clear"></button>
+        <button id="backspace"></button>
+        <button id="percent"></button>
+        <button id="divide">/</button>
+
+        <button id="seven">7</button>
+        <button id="eight">8</button>
+        <button id="nine">9</button>
+        <button id="multiply">*</button>
+
+        <button id="four">4</button>
+        <button id="five">5</button>
+        <button id="six">6</button>
+        <button id="subtract">-</button>
+
+        <button id="one">1</button>
+        <button id="two">2</button>
+        <button id="three">3</button>
+        <button id="add">+</button>
+
+        <button id="zero">0</button>
+        <button id="dot"></button>
+        <button id="equal" class="equal">=</button>
+      </div>
+    </div>
+    <script>
+      let display = document.getElementById("display");
+      let clear = document.getElementById("clear");
+      let backspace = document.getElementById("backspace");
+      let percent = document.getElementById("percent");
+      let divide = document.getElementById("divide");
+      let seven = document.getElementById("seven");
+      let eight = document.getElementById("eight");
+      let nine = document.getElementById("nine");
+      let multiply = document.getElementById("multiply");
+      let four = document.getElementById("four");
+      let five = document.getElementById("five");
+      let six = document.getElementById("six");
+      let subtract = document.getElementById("subtract");
+      let one = document.getElementById("one");
+      let two = document.getElementById("two");
+      let three = document.getElementById("three");
+      let add = document.getElementById("add");
+      let zero = document.getElementById("zero");
+      let dot = document.getElementById("dot");
+      let equal = document.getElementById("equal");
+
+      function appendToDisplay(value) {
+        if (display.textContent === "0") {
+          display.textContent = value;
+        } else {
+          display.textContent += value;
+        }
+      }
+
+      let buttons = document.getElementById("buttons");
+      buttons.addEventListener("click", (e) => {
+        if (e.target.id === "equal") {
+          console.log(e.target.innerText);
+          let result = eval(display.textContent);
+          appendToDisplay(e.target.innerText + result);
+        } else {
+          console.log(e.target.innerText);
+          appendToDisplay(e.target.innerText);
+        }
+
+        // if (e.target.id === "clear") {
+        //   display.textContent = "";
+        // } else if (e.target.id === "backspace") {
+        // }
+      });
+    </script>
+  </body>
+</html>

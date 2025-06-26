@@ -23,6 +23,7 @@
     <div id="box" class="box">Box</div>
     <button id="change-box">박스 변경</button>
     <div id="element-add">요소 추가 div</div>
+    <button id="element-add-button">요소 추가 버튼</button>
     <script>
       let text = document.getElementById("greeting");
       text.innerText = "Hello World!";
@@ -55,16 +56,19 @@
       // *toggle 버튼 연습 필요(자습)
 
       // createElement 실습
-      let elementAdd = document.getElementById("element-add");
-      let elementAddButton = document.createElement("BUTTON");
-      elementAddButton.innerText = "추가";
-      elementAddButton.style.backgroundColor = "blue";
-      elementAddButton.style.color = "red";
-      elementAddButton.style.padding = "10px 20px";
-      elementAddButton.style.borderRadius = "5px";
-      elementAddButton.style.cursor = "pointer";
-      elementAddButton.style.boxShadow = "0 0 10px 0 rgba(0, 0, 0, 0.5)";
-      elementAdd.appendChild(elementAddButton);
+      let elementAddButton = document.getElementById("element-add-button");
+      elementAddButton.addEventListener("click", function () {
+        let elementAdd = document.getElementById("element-add");
+        let elementAddDiv = document.createElement("div");
+        elementAddDiv.innerText = "추가";
+        elementAddDiv.style.backgroundColor = "blue";
+        elementAddDiv.style.color = "red";
+        elementAddDiv.style.padding = "10px 20px";
+        elementAddDiv.style.borderRadius = "5px";
+        elementAddDiv.style.cursor = "pointer";
+        elementAddDiv.style.boxShadow = "0 0 10px 0 rgba(0, 0, 0, 0.5)";
+        elementAdd.appendChild(elementAddDiv);
+      });
     </script>
   </body>
 </html>

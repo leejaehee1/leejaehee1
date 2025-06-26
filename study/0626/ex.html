@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 연습 예제</title>
+    <style></style>
+  </head>
+  <body>
+    <p id="text">안녕하세요!</p>
+    <button id="change-text">텍스트 변경</button>
+
+    <ol id="list">
+      <li>1</li>
+    </ol>
+    <input type="text" id="input" />
+    <button id="add-button">추가</button>
+    <script>
+      // 문제 : 입력창에 글을 쓰고 Enter 누르면 목록에 추가되도록 구현
+
+      let addButton = document.getElementById("add-button");
+      addButton.addEventListener("click", function () {
+        // 1. ol 리스트 가지고 온다.
+        let list = document.getElementById("list");
+        // 2. li 요소 하나 create 한다.
+        let li = document.createElement("li");
+        // 3. input 요소 가지고 온다.
+        let input = document.getElementById("input");
+        // 4. input 요소의 값을 가지고 온다.
+        let inputValue = input.value;
+        // 5. li 요소의 텍스트를 input 요소의 값으로 변경한다.
+        li.innerText = inputValue;
+        // 6. ol 요소에 li 요소를 추가한다.
+        list.appendChild(li);
+      });
+
+      // document.querySelector()
+      // 버튼 클릭 시 텍스트가 바뀌는 기능 만들기
+      //   let text = document.getElementById("text");
+      let text = document.querySelector("#text");
+      //   let changeTextButton = document.getElementById("change-text");
+      let changeTextButton = document.querySelector("#change-text");
+
+      changeTextButton.addEventListener("click", function () {
+        text.innerText = "Hello World!" + Date.now();
+      });
+    </script>
+  </body>
+</html>

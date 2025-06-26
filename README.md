@@ -4,6 +4,9 @@
 
 > 프론트엔드 개발자 및 백엔드 개발자 그리고 클라우드 및 소프트웨어 아키텍트가 되고 싶습니다.
 
+### 프로젝트 링크
+[계산기](https://leejaehee1.github.io/leejaehee1/small-project/01_calculator/index.html)
+
 ## 기술 스택
 
 ### 언어

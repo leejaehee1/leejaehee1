@@ -10,9 +10,9 @@
     <div class="calculator">
       <div id="display" class="display">0</div>
       <div id="buttons" class="buttons">
-        <button id="clear"></button>
-        <button id="backspace"></button>
-        <button id="percent"></button>
+        <button id="clear">C</button>
+        <button id="backspace">←</button>
+        <button id="percent">%</button>
         <button id="divide">/</button>
 
         <button id="seven">7</button>
@@ -31,15 +31,18 @@
         <button id="add">+</button>
 
         <button id="zero">0</button>
-        <button id="dot"></button>
+        <button id="dot">.</button>
         <button id="equal" class="equal">=</button>
       </div>
     </div>
     <script>
       let display = document.getElementById("display");
       let clear = document.getElementById("clear");
+      clear.style.backgroundColor = "red";
       let backspace = document.getElementById("backspace");
+      backspace.style.backgroundColor = "red";
       let percent = document.getElementById("percent");
+      percent.style.backgroundColor = "red";
       let divide = document.getElementById("divide");
       let seven = document.getElementById("seven");
       let eight = document.getElementById("eight");
@@ -68,11 +71,21 @@
       let buttons = document.getElementById("buttons");
       buttons.addEventListener("click", (e) => {
         if (e.target.id === "equal") {
-          console.log(e.target.innerText);
-          let result = eval(display.textContent);
-          appendToDisplay(e.target.innerText + result);
+          appendToDisplay(e.target.innerText + eval(display.textContent));
+        } else if (e.target.id === "clear") {
+          display.textContent = "0";
+        } else if (e.target.id === "backspace") {
+          if (display.textContent.length > 1) {
+            display.textContent = display.textContent.substr(
+              0,
+              display.textContent.length - 1
+            );
+          } else if (display.textContent.length === 1) {
+            display.textContent = "0";
+          }
+        } else if (e.target.id === "buttons") {
+          // todo
         } else {
-          console.log(e.target.innerText);
           appendToDisplay(e.target.innerText);
         }
 

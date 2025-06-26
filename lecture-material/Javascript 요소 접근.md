@@ -83,3 +83,36 @@ items.forEach((el, index) => {
 ```
 
 ---
+
+## ✅ 4. 실습 예제
+
+```html
+<h1 id="main-title">안녕하세요</h1>
+<p class="desc">JavaScript 연습 중입니다.</p>
+<button id="change-btn">제목 바꾸기</button>
+
+<script>
+  const title = document.getElementById("main-title");
+  const button = document.getElementById("change-btn");
+
+  button.addEventListener("click", () => {
+    title.textContent = "변경된 제목입니다!";
+    title.style.color = "blue";
+  });
+</script>
+```
+
+---
+
+## ✅ 요약 비교표
+
+| 메서드                        | 반환형            | 설명                  |
+| -------------------------- | -------------- | ------------------- |
+| `getElementById()`         | Element        | id로 1개 요소 선택        |
+| `getElementsByClassName()` | HTMLCollection | 클래스명으로 여러 개 선택      |
+| `getElementsByTagName()`   | HTMLCollection | 태그 이름으로 여러 개 선택     |
+| `querySelector()`          | Element        | CSS 선택자, 가장 첫 번째 요소 |
+| `querySelectorAll()`       | NodeList       | CSS 선택자, 모든 요소 선택   |
+
+---
+

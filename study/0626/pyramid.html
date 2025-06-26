@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>피라미드 예제</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 📘 문제 설명
+      // 정수 n이 주어졌을 때, 아래로 갈수록 별 개수가 줄어드는 피라미드를 출력하세요.
+
+      // 🔹 입력 예시
+      // printInvertedPyramid(4);
+      // 🔹 출력  : 별 개수 = n * 2 - 1, start = n - i, count = 별 개수()
+      // ******* : 7 = 4 * 2 - 1, start = 4 - 4, count = 별 개수()
+      //  *****  : 5 = 3 * 2 - 1, start = 4 - 3, count = 별 개수()
+      //   ***   : 3 = 2 * 2 - 1, start = 4 - 2, count = 별 개수()
+      //    *    : 1 = 1 * 2 - 1, start = 4 - 1, count = 별 개수()
+      function printInvertedPyramid(n) {
+        for (let i = n; i > 0; i--) {
+          const start = n - i;
+          const count = n * 2 - 1;
+          printStars(start, count);
+        }
+      }
+
+      function printStars(start, count) {
+        let stars = "";
+        for (let i = 0; i < start; i++) {
+          stars += " ";
+        }
+        for (let i = 0; i < count; i++) {
+          stars += "*";
+        }
+        console.log(stars);
+      }
+
+      printInvertedPyramid(4);
+    </script>
+  </body>
+</html>

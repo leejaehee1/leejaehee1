@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 예제</title>
+    <style></style>
+  </head>
+  <body>
+    <p id="greeting">안녕하세요! 반갑습니다!</p>
+    <img src="https://picsum.photos/200/300" alt="random image" />
+    <script>
+      let text = document.getElementById("greeting");
+      text.innerText = "Hello World!";
+
+      let image = document.getElementsByTagName("img");
+      image[0].src = "https://picsum.photos/200/300";
+    </script>
+  </body>
+</html>

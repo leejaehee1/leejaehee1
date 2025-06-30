@@ -100,6 +100,57 @@
       <button type="submit">가입</button>
     </form>
 
+    <form id="myForm">
+      <input type="email" required />
+      <button>제출</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("myForm");
+      form.addEventListener("submit", function (e) {
+        if (!form.checkValidity()) {
+          e.preventDefault(); // 유효성 통과 못하면 제출 막기
+          alert("필드를 올바르게 입력하세요.");
+        }
+      });
+    </script>
+
+    <div
+      id="preview"
+      style="
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 24px auto;
+        width: 300px;
+        height: 200px;
+      "
+    >
+      <h3>가입 정보</h3>
+      <p id="preview_username"></p>
+      <p id="preview_email"></p>
+      <p id="preview_password"></p>
+    </div>
+
+    <script>
+      function preview() {
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let preview_username = document.getElementById("preview_username");
+        let preview_email = document.getElementById("preview_email");
+        let preview_password = document.getElementById("preview_password");
+        console.log(username, email, password);
+        preview_username.innerText = username;
+        preview_email.innerText = email;
+        preview_password.innerText = password;
+      }
+    </script>
+
     <script>
       document
         .getElementById("signupForm")
@@ -135,22 +186,8 @@
 
           alert("회원가입 성공!");
           // 이곳에 실제 서버 전송 코드를 추가
+          preview();
         });
-    </script>
-
-    <form id="myForm">
-      <input type="email" required />
-      <button>제출</button>
-    </form>
-
-    <script>
-      const form = document.getElementById("myForm");
-      form.addEventListener("submit", function (e) {
-        if (!form.checkValidity()) {
-          e.preventDefault(); // 유효성 통과 못하면 제출 막기
-          alert("필드를 올바르게 입력하세요.");
-        }
-      });
     </script>
   </body>
 </html>

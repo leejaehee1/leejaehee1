@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 검증</title>
+  </head>
+  <body>
+    <input id="orderName" type="text" placeholder="주문자 이름" />
+    <input id="shipName" type="text" placeholder="수령인 이름" />
+    <input id="same" type="checkbox" onclick="copyName()" />
+
+    <br />
+
+    <input id="userName" type="text" placeholder="이름" />
+    <input id="userAge" type="number" placeholder="나이" />
+    <input id="submit" type="submit" value="제출" onclick="validateForm()" />
+
+    <br />
+
+    <input
+      id="male"
+      type="radio"
+      name="gender"
+      value="male"
+      onclick="validateGender()"
+    />
+    <label for="gender">남자</label>
+    <input
+      id="female"
+      type="radio"
+      name="gender"
+      value="female"
+      onclick="validateGender()"
+    />
+    <label for="gender">여자</label>
+
+    <select id="country" onchange="validateCountry()">
+      <option value="korea">한국</option>
+      <option value="usa">미국</option>
+      <option value="japan">일본</option>
+    </select>
+
+    <script>
+      function copyName() {
+        if (document.getElementById("same").checked) {
+          document.getElementById("shipName").value =
+            document.getElementById("orderName").value;
+        } else {
+          document.getElementById("shipName").value = "";
+        }
+      }
+
+      function validateForm() {
+        let name = document.getElementById("userName").value;
+        let age = document.getElementById("userAge").value;
+
+        if (name === "") {
+          alert("이름을 입력하세요.");
+          return false;
+        }
+
+        if (isNaN(age) || age < 1) {
+          alert("나이를 올바르게 입력하세요.");
+          return false;
+        }
+
+        alert("폼이 정상적으로 제출됩니다.");
+        return true;
+      }
+
+      function validateGender() {
+        // alert(document.querySelector('input[name="gender"]:checked').value);
+        let male = document.getElementById("male").checked;
+        let female = document.getElementById("female").checked;
+
+        if (male) {
+          return document.getElementById("male").value;
+        }
+        console.log(male, female);
+      }
+
+      function validateCountry() {
+        let country = document.getElementById("country").value;
+        console.log(country);
+      }
+    </script>
+  </body>
+</html>

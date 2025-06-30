@@ -109,3 +109,11 @@ HTML 요소에 `required`, `pattern`, `minlength`, `type="email"` 등을 지정�
 | `checkValidity()` | HTML5 유효성 검사 API 활용                 |
 
 ---
+
+## 연습문제
+
+### 문제 1. 간단한 회원가입 폼 만들기
+요구사항:
+
+- 이름(text), 이메일(email), 비밀번호(password) 입력
+- 제출 버튼 추가

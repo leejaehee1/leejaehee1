@@ -87,5 +87,70 @@
         console.log(country);
       }
     </script>
+
+    <form id="signupForm">
+      <input type="text" id="username" placeholder="이름 입력" /><br />
+      <input type="email" id="email" placeholder="이메일 입력" /><br />
+      <input type="password" id="password" placeholder="비밀번호 입력" /><br />
+      <input
+        type="password"
+        id="confirmPassword"
+        placeholder="비밀번호 확인"
+      /><br />
+      <button type="submit">가입</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // 폼 제출 막기
+
+          const username = document.getElementById("username").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+          if (!username) {
+            alert("이름을 입력하세요.");
+            return;
+          }
+
+          const emailRegex = /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/;
+          if (!emailRegex.test(email)) {
+            alert("올바른 이메일을 입력하세요.");
+            return;
+          }
+
+          if (password.length < 8) {
+            alert("비밀번호는 8자 이상이어야 합니다.");
+            return;
+          }
+
+          if (password !== confirmPassword) {
+            alert("비밀번호가 일치하지 않습니다.");
+            return;
+          }
+
+          alert("회원가입 성공!");
+          // 이곳에 실제 서버 전송 코드를 추가
+        });
+    </script>
+
+    <form id="myForm">
+      <input type="email" required />
+      <button>제출</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("myForm");
+      form.addEventListener("submit", function (e) {
+        if (!form.checkValidity()) {
+          e.preventDefault(); // 유효성 통과 못하면 제출 막기
+          alert("필드를 올바르게 입력하세요.");
+        }
+      });
+    </script>
   </body>
 </html>

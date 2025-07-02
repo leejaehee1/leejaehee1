@@ -53,3 +53,61 @@
 적절한 타입으로 선언하고, `"user123"`을 할당하세요.
 
 ---
+
+# ✅ TypeScript 타입 연습문제 – 정답 코드
+
+---
+
+### 1. 문자열 변수 선언
+
+```ts
+let name: string = "Alice";
+```
+
+---
+
+### 2. 숫자와 boolean 타입
+
+```ts
+let age: number = 21;
+let isStudent: boolean = true;
+```
+
+---
+
+### 3. 함수 매개변수와 반환 타입
+
+```ts
+function add(a: number, b: number): number {
+  return a + b;
+}
+```
+
+---
+
+### 4. 배열 타입
+
+```ts
+let scores: number[] = [80, 90, 100];
+// 또는: Array<number> = [80, 90, 100];
+```
+
+---
+
+### 5. 객체 타입 정의
+
+```ts
+let person: { name: string; age: number } = {
+  name: "Alice",
+  age: 21,
+};
+```
+
+---
+
+### 6. 유니언 타입
+
+```ts
+let id: number | string = "user123";
+```
+

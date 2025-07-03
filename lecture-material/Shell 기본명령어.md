@@ -87,6 +87,56 @@ rm memo.txt
 
 ---
 
+### 0702 실습한 커멘드
+
+```shell
+pwd
+cd ..
+ls
+cd report
+pwd
+ls
+cd ..
+cd study
+ls
+cd 0702
+ls
+cat shape.ts
+touch test.ts
+vi test.ts
+ll
+mkdir makeDirectory
+ls
+cp test.ts makeDirectory
+mv test.ts makeDirectory/test_move.ts
+cp -r makeDirectory makeDirectory_copy
+rm makeDirectory_copy/test.ts
+rm makeDirectory_copy
+rm -r makeDirectory_copy
+```
+
+---
+
+| 명령어     | 설명             | 예시                       |
+| ------- | -------------- | ------------------------ |
+| `pwd`   | 현재 경로 출력       | `/Users/jaehee/projects` |
+| `ls`    | 현재 폴더 파일 목록 보기 | `ls -l` → 자세히 보기         |
+| `cd`    | 폴더 이동          | `cd Desktop`             |
+| `cd ..` | 상위 폴더로 이동      |                          |
+
+### 0703 연습 문제
+
+```txt
+현재 위치를 확인해보세요.
+`Desktop` 폴더로 이동해보세요.
+`Documents` 폴더로 이동하고, 파일 목록을 확인하세요.
+`myTest`라는 폴더를 만들어보세요.
+그 안에 `note.txt`라는 파일을 만들어보세요.
+파일 이름을 `memo.txt`로 바꿔보세요.
+`memo.txt`를 상위 폴더로 이동시켜보세요.
+`myTest` 폴더를 삭제해보세요.
+```
+
 ## 🧠 마무리 퀴즈 (예시)
 
 1. 현재 위치를 확인하려면 어떤 명령어를 사용하나요? → `pwd`

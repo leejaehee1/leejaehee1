@@ -54,6 +54,47 @@
 
 ---
 
+### ✅ 문제 7. 인터페이스 사용
+
+**설명:**
+`Product`라는 인터페이스를 선언하고
+
+* `name`: string
+* `price`: number
+  속성을 갖도록 한 뒤, 그 타입으로 객체를 만들어보세요.
+
+---
+
+### ✅ 문제 8. 선택적 속성 (optional property)
+
+**설명:**
+`User` 인터페이스를 선언하고
+
+* `name`: string
+* `email`: string (선택적 속성)
+  을 갖도록 정의하세요. 그리고 email이 없는 사용자를 생성하세요.
+
+---
+
+### ✅ 문제 9. 타입 별칭(Type Alias)
+
+**설명:**
+`Point`라는 타입 별칭을 만들어
+
+* `x`: number
+* `y`: number
+  을 포함하도록 하고, 객체를 하나 선언해보세요.
+
+---
+
+### ✅ 문제 10. 함수 타입 정의
+
+**설명:**
+문자열을 받아 대문자로 반환하는 함수 `toUpper`를 함수 타입을 명시해서 작성하세요.
+
+
+---
+
 # ✅ TypeScript 타입 연습문제 – 정답 코드
 
 ---
@@ -110,4 +151,66 @@ let person: { name: string; age: number } = {
 ```ts
 let id: number | string = "user123";
 ```
+
+---
+
+### 7. 인터페이스 사용
+
+```ts
+interface Product {
+  name: string;
+  price: number;
+}
+
+const item: Product = {
+  name: "Keyboard",
+  price: 35000,
+};
+```
+
+---
+
+### 8. 선택적 속성 (optional property)
+
+```ts
+interface User {
+  name: string;
+  email?: string; // 선택적 속성
+}
+
+const u: User = {
+  name: "Lee",
+};
+```
+
+---
+
+### 9. 타입 별칭(Type Alias)
+
+```ts
+type Point = {
+  x: number;
+  y: number;
+};
+
+const p: Point = {
+  x: 10,
+  y: 20,
+};
+```
+
+---
+
+### 10. 함수 타입 정의
+
+```ts
+const toUpper: (str: string) => string = function (str) {
+  return str.toUpperCase();
+};
+
+// 또는 화살표 함수 버전:
+const toUpper2 = (str: string): string => str.toUpperCase();
+```
+
+---
 

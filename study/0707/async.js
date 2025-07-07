@@ -46,4 +46,28 @@ async function load() {
   }
 }
 
-load();
+// load();
+
+// await 병렬 처리
+const p1 = fetch("http://example.com/data1");
+const p2 = fetch("http://example.com/data2");
+
+async function test() {
+  const [res1, res2] = await Promise.all([p1, p2]);
+  console.log(res1);
+  console.log(res2);
+}
+
+// test();
+
+// 과제 1: 간단한 비동기 함수 만들기
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function helloAfter2s() {
+  await delay(2000);
+  console.log("2초 후 Hello!");
+}
+
+helloAfter2s();

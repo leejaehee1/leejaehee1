@@ -26,3 +26,24 @@ console.log(`sum => ${sum}`);
 // find
 const found = nums.find((n) => n > 2);
 console.log(`found => ${found}`);
+
+// some
+// const hasNegative = nums.some((n) => n < 0);
+const hasNegative = nums.some((n) => n < 2);
+console.log(hasNegative);
+
+// every
+// const allPositive = nums.every((n) => n > 0);
+const allPositive = nums.every((n) => n > 1);
+console.log(allPositive);
+
+// flat
+const nested = [1, 2, 3];
+const duplicated = nested.flatMap((n) => [n, n]);
+// [[1, 2, 3], [1, 2, 3]]
+// [ 1, 1, 2, 2, 3, 3 ]
+for (let nest of duplicated) {
+  console.log(`nest => ${nest}`);
+}
+
+console.log(duplicated);

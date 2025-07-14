@@ -1,3 +1,6 @@
+<img width="1368" height="1051" alt="image" src="https://github.com/user-attachments/assets/251a27d6-e224-4346-aab3-4f3e4002eff5" />
+
+
 ## 🧪 연습문제 1. 프로필 카드 만들기
 
 ### 📘 설명

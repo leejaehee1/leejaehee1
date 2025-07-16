@@ -34,3 +34,15 @@ module.exports = {
   },
 }
 ```
+
+## src/index.css
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## src/index.tsx
+```js
+import "@fontsource/material-icons";
+```

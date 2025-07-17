@@ -7,3 +7,4 @@
 | 3주차  | (6.23 \~ 6.29) | **웹 요청과 응답의 본질 이해하기**<br>· HTTP의 request/response 구조<br>· Ajax, forward, redirect 차이 | `week03_http_ajax.md`         |
 | 4주차  | (6.30 \~ 7.6)  | **데이터 교환 포맷 및 시리얼라이징 이해**<br>· JSON, XML, YAML 비교<br>· https, SSL 인증서 기초             | `week04_dataformat_ssl.md`    |
 | 5주차  | (7.7 \~ 7.13)  | **프로그래밍 아키텍처 패턴 비교**<br>· MVC, MVP, MVVM 패턴의 구조와 특징                                  | `week05_patterns_mvc.md`      |
+| 6주차  | (7.14 \~ 7.20) | **자료보호와 암호화 기술의 원리**<br>· 해싱/대칭/비대칭 암호화 알고리즘 정리                                      | `week06_encryption_basics.md` |

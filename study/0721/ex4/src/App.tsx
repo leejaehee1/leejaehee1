@@ -1,10 +1,12 @@
 import React from "react";
 import MemoTest from "./pages/MemoTest";
+import HookTest from "./pages/HookTest";
 
 function App() {
   return (
     <div className="App">
-      <MemoTest />
+      {/* <MemoTest /> */}
+      <HookTest />
     </div>
   );
 }

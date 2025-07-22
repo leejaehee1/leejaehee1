@@ -18,81 +18,180 @@
 
 ---
 
-## 🧠 핵심 훅 요약
+### 1. **useState**
 
-### 1. `useState`
-
-```tsx
+```js
+import { useState } from 'react';
+// 컴포넌트 내부에서 값(상태) 관리
 const [count, setCount] = useState(0);
+
+setCount(count + 1);
 ```
 
-* 상태를 저장하고 업데이트
-* 비동기적 동작
+> 숫자, 문자열, 객체 등 상태를 저장·변경하고 싶을 때
 
 ---
 
-### 2. `useEffect`
+### 2. **useEffect**
 
-```tsx
+```js
+import { useEffect } from 'react';
+// 컴포넌트가 렌더링될 때 부수 효과 실행
 useEffect(() => {
-  console.log("컴포넌트가 마운트되거나 count가 바뀔 때 실행");
-  return () => console.log("언마운트 또는 업데이트 전 정리");
-}, [count]);
+  console.log('컴포넌트 마운트/업데이트!');
+}, []);
 ```
 
-* 부수 효과(side effect) 처리
-* mount, update, unmount 타이밍 제어
+> 데이터 불러오기, 구독, 타이머 등 “렌더 이후”에 실행할 코드
 
 ---
 
-### 3. `useMemo`
+### 3. **useContext**
 
-```tsx
-const expensive = useMemo(() => computeHeavy(input), [input]);
+```js
+import { useContext } from 'react';
+// Context 값을 쉽게 꺼내 쓸 때
+const theme = useContext(ThemeContext);
 ```
 
-* input 값이 바뀌지 않으면 `computeHeavy()`는 다시 실행되지 않음
-* 값의 재계산을 방지
+> 전역 데이터(테마, 로그인 등) 사용할 때
 
 ---
 
-### 4. `useCallback`
+### 4. **useReducer**
 
-```tsx
-const handleClick = useCallback(() => console.log("클릭"), []);
+```js
+import { useReducer } from 'react';
+// 액션 기반 복잡한 상태 관리
+const [state, dispatch] = useReducer(reducer, 초기값);
+
+dispatch({ type: 'INCREMENT' });
 ```
 
-* 함수를 메모이제이션하여 자식 컴포넌트의 불필요한 리렌더링 방지
+> 여러 상태, 조건문 없는 업데이트, Redux 비슷하게 쓸 때
 
 ---
 
-### 5. `useRef`
+### 5. **useMemo**
 
-```tsx
-const inputRef = useRef<HTMLInputElement>(null);
-inputRef.current?.focus();
+```js
+import { useMemo } from 'react';
+// 무거운 연산 결과를 기억(캐싱)
+const total = useMemo(() => price * count, [price, count]);
 ```
 
-* DOM 접근 or 변하지 않는 값 참조용
-* 렌더링에는 영향을 주지 않음
+> 값 계산이 비싸고, 불필요한 재계산을 피하고 싶을 때
 
 ---
 
-### 6. `useReducer`
+### 6. **useCallback**
 
-```tsx
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'increment': return { count: state.count + 1 };
-    default: return state;
-  }
-};
-
-const [state, dispatch] = useReducer(reducer, { count: 0 });
+```js
+import { useCallback } from 'react';
+// 함수를 기억(재생성 방지)
+const handleClick = useCallback(() => {
+  alert('clicked!');
+}, []);
 ```
 
-* 복잡한 상태를 `dispatch(action)` 방식으로 업데이트
-* Redux와 유사한 구조
+> 함수를 props로 넘겨줄 때, 불필요한 렌더 방지
+
+---
+
+### 7. **useRef**
+
+```js
+import { useRef } from 'react';
+// DOM 또는 값 참조(변경돼도 리렌더 없음)
+const inputRef = useRef();
+
+<input ref={inputRef} />
+```
+
+> DOM 직접 접근, 이전 값 저장, setTimeout ID 보관 등
+
+---
+
+### 8. **useImperativeHandle**
+
+```js
+import { useImperativeHandle, forwardRef } from 'react';
+// ref로 외부에 함수/값 노출 (커스텀 컴포넌트)
+useImperativeHandle(ref, () => ({
+  focus: () => { /* ... */ }
+}));
+```
+
+> 커스텀 컴포넌트를 ref로 제어하고 싶을 때
+
+---
+
+### 9. **useLayoutEffect**
+
+```js
+import { useLayoutEffect } from 'react';
+// DOM 변경 직후 동기 실행 (깜빡임 방지 등)
+useLayoutEffect(() => {
+  // 레이아웃 계산, DOM 조작
+}, []);
+```
+
+> 화면 깜빡임 방지, DOM 레이아웃 조작 필요시
+
+---
+
+### 10. **useDebugValue**
+
+```js
+import { useDebugValue } from 'react';
+// 개발자도구에서 커스텀 훅 값 표시
+useDebugValue(count);
+```
+
+> 커스텀 훅 내부 값 확인(디버깅 용도)
+
+---
+
+### 11. **useId**
+
+```js
+import { useId } from 'react';
+// 고유 ID 생성 (접근성, 라벨-인풋 연결)
+const id = useId();
+
+<label htmlFor={id}>이름</label>
+<input id={id} />
+```
+
+> label/input 등 자동으로 유일한 ID 필요할 때
+
+---
+
+### 12. **useDeferredValue**
+
+```js
+import { useDeferredValue } from 'react';
+// 입력값을 비동기로 천천히 반영
+const deferred = useDeferredValue(value);
+```
+
+> 검색어 입력 등 즉시 반영하지 않고, 느리게 처리할 때
+
+---
+
+### 13. **useTransition**
+
+```js
+import { useTransition } from 'react';
+// 상태 변경을 낮은 우선순위로 처리 (UI 응답성↑)
+const [isPending, startTransition] = useTransition();
+
+startTransition(() => {
+  setList(heavyData);
+});
+```
+
+> 무거운 상태 변경 시, 입력/애니메이션을 부드럽게 처리
 
 ---
 

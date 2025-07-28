@@ -13,7 +13,7 @@ const initializeStore = () => {
   }
   const store = configureStore({
     reducer: rootReducer,
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(middleware)
+    middleware: getDefaultMiddleware => getDefaultMiddleware()
   })
   return store
 }

@@ -2,6 +2,7 @@ import type {FC, ChangeEvent} from 'react'
 import {useState, useCallback} from 'react'
 import {Icon} from '../../theme/daisyui'
 import * as D from '../../data'
+import React from 'react'
 
 export type CreateListFormProps = {
   onCreateList: (uuid: string, title: string) => void

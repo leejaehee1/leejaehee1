@@ -1,7 +1,20 @@
-import { Controller, Post, Body, Req, Res } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Req,
+  Res,
+  UseGuards,
+  Get,
+} from '@nestjs/common';
 import type { Request, Response } from 'express';
 import { AuthService } from './auth.service';
 import { CreateUserDto } from 'src/user/user.dto';
+import { LoginGuard } from './auth.guard';
+
+interface RequestWithUser extends Request {
+  user?: any;
+}
 
 @Controller('auth')
 export class AuthController {
@@ -30,5 +43,24 @@ export class AuthController {
       console.log(error);
       res.send('Login failed');
     }
+  }
+
+  @UseGuards(LoginGuard)
+  @Get('login2')
+  login2(@Req() req: RequestWithUser, @Res() res: Response) {
+    if (!req.cookies['login'] && req.user) {
+      res.cookie('login', JSON.stringify(req.user), {
+        httpOnly: true,
+        secure: true,
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+      });
+    }
+    return res.send({ message: 'Login2 successful' });
+  }
+
+  @UseGuards(LoginGuard)
+  @Get('test-guard')
+  testGuard() {
+    return '로그인된 때만 이 글이 보입니다.';
   }
 }

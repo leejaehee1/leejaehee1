@@ -16,6 +16,7 @@ exports.AuthController = void 0;
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const user_dto_1 = require("../user/user.dto");
+const auth_guard_1 = require("./auth.guard");
 let AuthController = class AuthController {
     authService;
     constructor(authService) {
@@ -42,6 +43,19 @@ let AuthController = class AuthController {
             res.send('Login failed');
         }
     }
+    login2(req, res) {
+        if (!req.cookies['login'] && req.user) {
+            res.cookie('login', JSON.stringify(req.user), {
+                httpOnly: true,
+                secure: true,
+                maxAge: 1000 * 60 * 60 * 24 * 7,
+            });
+        }
+        return res.send({ message: 'Login2 successful' });
+    }
+    testGuard() {
+        return '로그인된 때만 이 글이 보입니다.';
+    }
 };
 exports.AuthController = AuthController;
 __decorate([
@@ -59,6 +73,22 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "login", null);
+__decorate([
+    (0, common_1.UseGuards)(auth_guard_1.LoginGuard),
+    (0, common_1.Get)('login2'),
+    __param(0, (0, common_1.Req)()),
+    __param(1, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], AuthController.prototype, "login2", null);
+__decorate([
+    (0, common_1.UseGuards)(auth_guard_1.LoginGuard),
+    (0, common_1.Get)('test-guard'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], AuthController.prototype, "testGuard", null);
 exports.AuthController = AuthController = __decorate([
     (0, common_1.Controller)('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])

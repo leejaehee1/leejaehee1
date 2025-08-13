@@ -1,4 +1,4 @@
 **/node_modules/*
 **/my-first-repo/*
 **/build/*
-**/.env
+.env

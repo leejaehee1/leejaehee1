@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 예제</title>
+    <style></style>
+  </head>
+  <body>
+    <button onclick="togglePic()">이미지 바꾸기</button>
+    <button id="myBtn">이미지 바꾸기2</button>
+    <img id="pic" src="image1.jpg" width="300" height="300" />
+
+    <script>
+      let toggle = true;
+      function togglePic() {
+        const pic = document.getElementById("pic");
+        if (toggle) {
+          pic.src = "image2.jpg";
+          toggle = false;
+        } else {
+          pic.src = "image1.jpg";
+          toggle = true;
+        }
+      }
+
+      let myBtn = document.getElementById("myBtn");
+      myBtn.addEventListener("mouseleave", togglePic);
+    </script>
+  </body>
+</html>

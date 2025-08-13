@@ -1,0 +1,51 @@
+# 회원가입
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "123456",
+  "username": "test"
+}
+
+### 로그인
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "123456"
+}
+
+### 로그인2
+GET http://localhost:3000/auth/login2
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "123456"
+}
+
+### Guard 테스트
+GET http://localhost:3000/auth/test-guard
+
+### 로그인 3 테스트 : 세션을 사용하는 테스트
+POST http://localhost:3000/auth/login3
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "123456"
+}
+
+### 로그인 3 테스트 : 틀린 패스워드로 테스트
+POST http://localhost:3000/auth/login3
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "1234567"
+}
+
+### 인증이 성공 하는지 테스트
+GET http://localhost:3000/auth/test-guard2

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포트폴리오 갤러리</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f9f9f9;
+        padding: 40px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover img {
+        transform: scale(1.05);
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover .overlay {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <div class="card">
+        <img
+          src="https://media.istockphoto.com/id/1458782106/ko/%EC%82%AC%EC%A7%84/jotunheimen-%EA%B5%AD%EB%A6%BD-%EA%B3%B5%EC%9B%90%EC%9D%98-%EC%88%B2%EA%B3%BC-%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%83%88-%EB%B8%94%EB%A3%A8-%EA%B0%95%EC%9D%B4%EC%9E%88%EB%8A%94-%EC%82%B0-%ED%92%8D%EA%B2%BD%EC%9D%98-%EA%B2%BD%EC%B9%98-%EC%A2%8B%EC%9D%80-%EA%B3%B5%EC%A4%91-%EC%A0%84%EB%A7%9D.jpg?s=612x612&w=0&k=20&c=OThMN5TseaKZ63J70nd7uxM8hXfugqHOE5CjC4tT-tE="
+          alt="Project 1"
+        />
+        <div class="overlay">
+          <h3>프로젝트 1</h3>
+          <p>간단한 설명입니다.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://media.istockphoto.com/id/1458782106/ko/%EC%82%AC%EC%A7%84/jotunheimen-%EA%B5%AD%EB%A6%BD-%EA%B3%B5%EC%9B%90%EC%9D%98-%EC%88%B2%EA%B3%BC-%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%83%88-%EB%B8%94%EB%A3%A8-%EA%B0%95%EC%9D%B4%EC%9E%88%EB%8A%94-%EC%82%B0-%ED%92%8D%EA%B2%BD%EC%9D%98-%EA%B2%BD%EC%B9%98-%EC%A2%8B%EC%9D%80-%EA%B3%B5%EC%A4%91-%EC%A0%84%EB%A7%9D.jpg?s=612x612&w=0&k=20&c=OThMN5TseaKZ63J70nd7uxM8hXfugqHOE5CjC4tT-tE="
+          alt="Project 2"
+        />
+        <div class="overlay">
+          <h3>프로젝트 2</h3>
+          <p>반응형 웹사이트</p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://media.istockphoto.com/id/1458782106/ko/%EC%82%AC%EC%A7%84/jotunheimen-%EA%B5%AD%EB%A6%BD-%EA%B3%B5%EC%9B%90%EC%9D%98-%EC%88%B2%EA%B3%BC-%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%83%88-%EB%B8%94%EB%A3%A8-%EA%B0%95%EC%9D%B4%EC%9E%88%EB%8A%94-%EC%82%B0-%ED%92%8D%EA%B2%BD%EC%9D%98-%EA%B2%BD%EC%B9%98-%EC%A2%8B%EC%9D%80-%EA%B3%B5%EC%A4%91-%EC%A0%84%EB%A7%9D.jpg?s=612x612&w=0&k=20&c=OThMN5TseaKZ63J70nd7uxM8hXfugqHOE5CjC4tT-tE="
+          alt="Project 3"
+        />
+        <div class="overlay">
+          <h3>프로젝트 3</h3>
+          <p>JavaScript 기반 앱</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

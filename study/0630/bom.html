@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM 객체</title>
+  </head>
+  <body>
+    <h1>BOM 객체</h1>
+    <script>
+      function openPopup() {
+        window.open("https://www.naver.com", "popup", "width=300, height=300");
+      }
+
+      //   setTimeout(openPopup, 3000);
+
+      //   setInterval(openPopup, 3000);
+
+      // Navigator
+      console.log(navigator.userAgent);
+      console.log(navigator.language);
+      console.log(navigator.platform);
+      console.log(navigator.appName);
+      console.log(navigator.appVersion);
+      console.log(navigator.cookieEnabled);
+      console.log(navigator.onLine);
+      console.log(navigator.product);
+      console.log(navigator.productSub);
+      console.log(navigator.vendor);
+
+      // Location
+      console.log(location.href);
+      console.log(location);
+
+      //   location.href = "https://www.naver.com";
+
+      //   if (confirm("구글로 이동할까요?")) {
+      //     location.href = "https://www.google.com";
+      //   } else {
+      //     location.href = "https://www.naver.com";
+      //   }
+
+      // Screen
+      //   console.log("화면 너비:", screen.width);
+      //   console.log("화면 높이:", screen.height);
+      //   console.log(screen);
+
+      // History
+      //   history.back(); // 뒤로가기
+      //   history.forward(); // 앞으로가기
+      console.log(history);
+    </script>
+
+    <button onclick="openTheWindow()">새창 띄우기</button>
+
+    <script>
+      function openTheWindow() {
+        window.open(
+          "https://www.naver.com",
+          "popup",
+          "width=" + screen.width + ", height=" + screen.height
+        );
+      }
+
+      function autoMovePage() {
+        setTimeout(function () {
+          location.href = "https://www.naver.com";
+        }, 3000);
+      }
+
+      //   autoMovePage();
+
+      console.log(screen.width);
+      console.log(screen.height);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Event 예제</title>
+    <style>
+      #map {
+        width: 500px;
+        height: 500px;
+        background-color: #f0f0f0;
+        position: relative;
+      }
+
+      #character {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      // 입력창에 글을 쓰고 Enter 누르면 목록에 추가되도록 구현
+      // 키보드 방향키, div 가 상하좌우로 이동하는 것을 방금 배운 것으로 해보겠습니다.
+      let character = document.createElement("div");
+      let map = document.getElementById("map");
+
+      character.id = "character";
+
+      map.appendChild(character);
+
+      document.addEventListener("keydown", function (event) {
+        // console.log(event);
+        console.log("offsetTop:", character.offsetTop);
+        console.log("offsetLeft:", character.offsetLeft);
+
+        if (event.key === "ArrowUp") {
+          if (character.offsetTop > 0) {
+            character.style.top = character.offsetTop - 10 + "px";
+          }
+        } else if (event.key === "ArrowDown") {
+          if (character.offsetTop < 450) {
+            character.style.top = character.offsetTop + 10 + "px";
+          }
+        } else if (event.key === "ArrowLeft") {
+          if (character.offsetLeft > 0) {
+            character.style.left = character.offsetLeft - 10 + "px";
+          }
+        } else if (event.key === "ArrowRight") {
+          if (character.offsetLeft < 450) {
+            character.style.left = character.offsetLeft + 10 + "px";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

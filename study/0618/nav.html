@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 탭 UI</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        padding: 40px;
+        background-color: #f7f7f7;
+      }
+
+      .tab-container {
+        max-width: 500px;
+        margin: auto;
+      }
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      label {
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: #ddd;
+        margin-right: 5px;
+        cursor: pointer;
+        border-radius: 8px 8px 0 0;
+        transition: background 0.3s;
+      }
+
+      input[type="radio"]:checked + label {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .content {
+        display: none;
+        background-color: white;
+        padding: 20px;
+        border-radius: 0 8px 8px 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: -5px;
+      }
+
+      /* 각각의 탭이 체크됐을 때 해당 content 보여주기 */
+      #tab1:checked ~ #content1,
+      #tab2:checked ~ #content2,
+      #tab3:checked ~ #content3 {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab-container">
+      <input type="radio" id="tab1" name="tab" checked />
+      <label for="tab1">HTML</label>
+
+      <input type="radio" id="tab2" name="tab" />
+      <label for="tab2">CSS</label>
+
+      <input type="radio" id="tab3" name="tab" />
+      <label for="tab3">JavaScript</label>
+
+      <div class="content" id="content1">
+        <h2>HTML</h2>
+        <p>웹 페이지의 구조를 만드는 마크업 언어입니다.</p>
+      </div>
+      <div class="content" id="content2">
+        <h2>CSS</h2>
+        <p>웹 페이지에 스타일을 적용하는 언어입니다.</p>
+      </div>
+      <div class="content" id="content3">
+        <h2>JavaScript</h2>
+        <p>웹 페이지를 동적으로 만들어주는 스크립트 언어입니다.</p>
+      </div>
+    </div>
+  </body>
+</html>

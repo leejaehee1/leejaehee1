@@ -1,0 +1,13 @@
+body {
+  background-color: yellow !important;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+  color: blue; /* 글자색이 파란색이다. */
+}
+
+h2 {
+  color: lightcoral; /* 글자색이 파란색이다. */
+  font-weight: 300; /* 글자색이 파란색이다. */
+}

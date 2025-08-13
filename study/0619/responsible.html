@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsible</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+
+      .box1 {
+        background-color: red;
+      }
+
+      .box2 {
+        background-color: green;
+      }
+
+      .box3 {
+        background-color: blue;
+      }
+
+      .box4 {
+        background-color: rgb(255, 0, 0);
+      }
+
+      .box5 {
+        background-color: rgb(0, 255, 0);
+      }
+
+      .box6 {
+        background-color: rgb(0, 0, 255);
+      }
+
+      .box7 {
+        background-color: #ff0000;
+      }
+
+      .box8 {
+        background-color: #00ff00;
+      }
+
+      .box9 {
+        background-color: #0000ff;
+      }
+
+      .box10 {
+        background-color: hsl(0, 100%, 50%);
+      }
+
+      .box11 {
+        background-color: hsl(120, 100%, 50%);
+      }
+
+      .box12 {
+        background-color: hsl(240, 100%, 50%);
+      }
+
+      .box13 {
+        background-color: rgba(255, 0, 0, 0.3);
+      }
+
+      .box14 {
+        background-color: rgba(0, 255, 0, 0.5);
+      }
+
+      .box15 {
+        background-color: rgba(0, 0, 255, 0.7);
+      }
+
+      body {
+        background-image: url("https://media.istockphoto.com/id/1458782106/ko/%EC%82%AC%EC%A7%84/jotunheimen-%EA%B5%AD%EB%A6%BD-%EA%B3%B5%EC%9B%90%EC%9D%98-%EC%88%B2%EA%B3%BC-%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%83%88-%EB%B8%94%EB%A3%A8-%EA%B0%95%EC%9D%B4%EC%9E%88%EB%8A%94-%EC%82%B0-%ED%92%8D%EA%B2%BD%EC%9D%98-%EA%B2%BD%EC%B9%98-%EC%A2%8B%EC%9D%80-%EA%B3%B5%EC%A4%91-%EC%A0%84%EB%A7%9D.jpg?s=612x612&w=0&k=20&c=OThMN5TseaKZ63J70nd7uxM8hXfugqHOE5CjC4tT-tE=");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      /* 데스크탑 */
+      @media (min-width: 1025px) {
+        .box {
+          font-size: 20px;
+          background-color: yellow;
+        }
+      }
+
+      /* 태블릿 */
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .box {
+          font-size: 18px;
+          background-color: blue;
+        }
+      }
+
+      /* 모바일 */
+      @media (max-width: 767px) {
+        .box {
+          font-size: 16px;
+          background-color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Color Space - color</h1>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+
+    <h1>Color Space - RGB</h1>
+    <div class="box box4"></div>
+    <div class="box box5"></div>
+    <div class="box box6"></div>
+
+    <h1>Color Space - RGB Hex</h1>
+    <div class="box box7"></div>
+    <div class="box box8"></div>
+    <div class="box box9"></div>
+
+    <h1>Color Space - HSL</h1>
+    <div class="box box10"></div>
+    <div class="box box11"></div>
+    <div class="box box12"></div>
+
+    <h1>Color Space - RGBA</h1>
+    <div class="box box13"></div>
+    <div class="box box14"></div>
+    <div class="box box15"></div>
+  </body>
+</html>

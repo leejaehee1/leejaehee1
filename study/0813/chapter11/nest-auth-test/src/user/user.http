@@ -1,0 +1,25 @@
+### Create User
+POST http://localhost:3000/user/create
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "username": "test",
+  "password": "test"
+}
+
+### Get User
+GET http://localhost:3000/user/getUser/test@test.com
+
+### Update User
+PUT http://localhost:3000/user/update/test@test.com
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "username": "test2",
+  "password": "test2"
+}
+
+### Delete User
+DELETE http://localhost:3000/user/delete/test@test.com

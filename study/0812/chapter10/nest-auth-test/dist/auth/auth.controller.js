@@ -56,6 +56,12 @@ let AuthController = class AuthController {
     testGuard() {
         return '로그인된 때만 이 글이 보입니다.';
     }
+    login3(req) {
+        return req.user;
+    }
+    testGuardWithSession(req) {
+        return req.user;
+    }
 };
 exports.AuthController = AuthController;
 __decorate([
@@ -89,6 +95,22 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "testGuard", null);
+__decorate([
+    (0, common_1.UseGuards)(auth_guard_1.LocalAuthGuard),
+    (0, common_1.Post)('login3'),
+    __param(0, (0, common_1.Req)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Object)
+], AuthController.prototype, "login3", null);
+__decorate([
+    (0, common_1.UseGuards)(auth_guard_1.AuthenticatedGuard),
+    (0, common_1.Get)('test-guard2'),
+    __param(0, (0, common_1.Req)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Object)
+], AuthController.prototype, "testGuardWithSession", null);
 exports.AuthController = AuthController = __decorate([
     (0, common_1.Controller)('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])

@@ -11,5 +11,7 @@ export declare class AuthController {
     login(req: Request, res: Response): Promise<void>;
     login2(req: RequestWithUser, res: Response): Response<any, Record<string, any>>;
     testGuard(): string;
+    login3(req: RequestWithUser): any;
+    testGuardWithSession(req: RequestWithUser): any;
 }
 export {};

@@ -5,3 +5,11 @@ export declare class LoginGuard implements CanActivate {
     constructor(authService: AuthService);
     canActivate(context: ExecutionContext): Promise<boolean>;
 }
+declare const LocalAuthGuard_base: import("@nestjs/passport").Type<import("@nestjs/passport").IAuthGuard>;
+export declare class LocalAuthGuard extends LocalAuthGuard_base {
+    canActivate(context: ExecutionContext): Promise<boolean>;
+}
+export declare class AuthenticatedGuard implements CanActivate {
+    canActivate(context: ExecutionContext): boolean;
+}
+export {};

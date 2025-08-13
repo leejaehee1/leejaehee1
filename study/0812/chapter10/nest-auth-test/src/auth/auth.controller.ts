@@ -10,7 +10,7 @@ import {
 import type { Request, Response } from 'express';
 import { AuthService } from './auth.service';
 import { CreateUserDto } from 'src/user/user.dto';
-import { LoginGuard } from './auth.guard';
+import { AuthenticatedGuard, LocalAuthGuard, LoginGuard } from './auth.guard';
 
 interface RequestWithUser extends Request {
   user?: any;
@@ -62,5 +62,17 @@ export class AuthController {
   @Get('test-guard')
   testGuard() {
     return '로그인된 때만 이 글이 보입니다.';
+  }
+
+  @UseGuards(LocalAuthGuard)
+  @Post('login3')
+  login3(@Req() req: RequestWithUser): any {
+    return req.user;
+  }
+
+  @UseGuards(AuthenticatedGuard)
+  @Get('test-guard2')
+  testGuardWithSession(@Req() req: RequestWithUser): any {
+    return req.user;
   }
 }

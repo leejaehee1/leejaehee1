@@ -9,9 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoginGuard = void 0;
+exports.AuthenticatedGuard = exports.LocalAuthGuard = exports.LoginGuard = void 0;
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
+const passport_1 = require("@nestjs/passport");
 let LoginGuard = class LoginGuard {
     authService;
     constructor(authService) {
@@ -42,4 +43,26 @@ exports.LoginGuard = LoginGuard = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [auth_service_1.AuthService])
 ], LoginGuard);
+let LocalAuthGuard = class LocalAuthGuard extends (0, passport_1.AuthGuard)('local') {
+    async canActivate(context) {
+        const result = (await super.canActivate(context));
+        const request = context.switchToHttp().getRequest();
+        await super.logIn(request);
+        return result;
+    }
+};
+exports.LocalAuthGuard = LocalAuthGuard;
+exports.LocalAuthGuard = LocalAuthGuard = __decorate([
+    (0, common_1.Injectable)()
+], LocalAuthGuard);
+let AuthenticatedGuard = class AuthenticatedGuard {
+    canActivate(context) {
+        const request = context.switchToHttp().getRequest();
+        return request.isAuthenticated();
+    }
+};
+exports.AuthenticatedGuard = AuthenticatedGuard;
+exports.AuthenticatedGuard = AuthenticatedGuard = __decorate([
+    (0, common_1.Injectable)()
+], AuthenticatedGuard);
 //# sourceMappingURL=auth.guard.js.map

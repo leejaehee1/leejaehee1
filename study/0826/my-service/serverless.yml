@@ -13,6 +13,31 @@ provider:
     name: tmd-genai1-teacher
     blockPublicAccess: true
     serverSideEncryption: AES256
+  environment:
+    USERS_TABLE: ${self:service}-users-${sls:stage} # my-service-teacher-users-dev
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:Query
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+      Resource:
+        - arn:aws:dynamodb:ap-northeast-2:654654611599:table/my-service-teacher-users-dev
+
+resources:
+  Resources:
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.environment.USERS_TABLE}
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
 
 functions:
   getUser:
@@ -28,3 +53,17 @@ functions:
       - httpApi:
           path: /users
           method: post
+
+  updateUser:
+    handler: handler.updateUser
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: put
+
+  deleteUser:
+    handler: handler.deleteUser
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: delete

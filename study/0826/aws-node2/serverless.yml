@@ -1,0 +1,19 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: jsoftwareinc
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: aws-node2
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: aws-node2
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-northeast-2
+  deploymentBucket:
+    name: tmd-genai1-teacher
+    blockPublicAccess: true
+    serverSideEncryption: AES256
+
+functions:
+  hello:
+    handler: handler.hello

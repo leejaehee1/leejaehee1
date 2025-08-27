@@ -1,0 +1,35 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: jsoftwareinc
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: photo-optimizer-teacher-1
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: photo-optimizer-teacher-1
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-northeast-2
+  deploymentBucket:
+    name: tmd-genai1-teacher
+    blockPublicAccess: true
+    serverSideEncryption: AES256
+  memorySize: 1024
+  timeout: 10
+  environment:
+    DEST_BUCKET: ${self:service}-optimized-bucket-${sls:stage}
+    UPLOAD_BUCKET: ${self:service}-upload-bucket-${sls:stage}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+        - s3:PutObject
+      Resource:
+        - arn:aws:s3:::${self:provider.environment.UPLOAD_BUCKET}/*
+        - arn:aws:s3:::${self:provider.environment.DEST_BUCKET}/*
+functions:
+  optimize:
+    handler: handler.optimize
+    events:
+      - s3:
+          bucket: ${self:provider.environment.UPLOAD_BUCKET}
+          event: s3:ObjectCreated:*
